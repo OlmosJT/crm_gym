@@ -41,6 +41,9 @@ class TrainingServiceImplTest {
         );
 
         Mockito.when(trainingDao.save(training)).thenReturn(training);
+
+        trainingService.createTraining(training);
+
         Mockito.verify(trainingDao, times(1)).save(training);
     }
 

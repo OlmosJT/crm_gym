@@ -1,6 +1,5 @@
 package com.epam.crm.gym.service.impl;
 
-import com.epam.crm.gym.aspect.Loggable;
 import com.epam.crm.gym.dao.TrainingDao;
 import com.epam.crm.gym.exception.NotFoundException;
 import com.epam.crm.gym.model.Training;
@@ -17,13 +16,11 @@ public class TrainingServiceImpl implements TrainingService {
     }
 
     @Override
-    @Loggable
     public Training createTraining(Training training) {
         return trainingDao.save(training);
     }
 
     @Override
-    @Loggable
     public Training findTrainingById(long id) throws NotFoundException {
         Training training = trainingDao.get(id);
         if(training == null) {

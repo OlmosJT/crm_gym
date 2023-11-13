@@ -1,6 +1,5 @@
 package com.epam.crm.gym.service.impl;
 
-import com.epam.crm.gym.aspect.Loggable;
 import com.epam.crm.gym.dao.UserEDao;
 import com.epam.crm.gym.exception.NotFoundException;
 import com.epam.crm.gym.model.Trainee;
@@ -18,13 +17,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Loggable
     public UserE createUser(UserE user) {
         return userEDao.save(user);
     }
 
     @Override
-    @Loggable
     public UserE findUserEById(long id) throws NotFoundException {
         UserE user = userEDao.get(id);
         if(user == null) {
@@ -34,7 +31,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Loggable
     public void updateUserE(UserE user) throws NotFoundException {
         if(userEDao.get(user.getId()) == null) {
             throw new NotFoundException("User record not exist by id: " + user.getId());
@@ -43,7 +39,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Loggable
     public void deleteUserEById(long id) {
         userEDao.delete(id);
     }

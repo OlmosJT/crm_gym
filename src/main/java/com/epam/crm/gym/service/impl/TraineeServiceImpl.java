@@ -1,6 +1,6 @@
 package com.epam.crm.gym.service.impl;
 
-import com.epam.crm.gym.aspect.Loggable;
+
 import com.epam.crm.gym.dao.TraineeDao;
 import com.epam.crm.gym.dao.UserEDao;
 import com.epam.crm.gym.exception.NotFoundException;
@@ -22,7 +22,6 @@ public class TraineeServiceImpl implements TraineeService {
     }
 
     @Override
-    @Loggable
     public Trainee createTrainee(Trainee trainee) throws IllegalArgumentException {
         UserE user = userEDao.get(trainee.getUserId());
         if(user == null) {
@@ -40,7 +39,6 @@ public class TraineeServiceImpl implements TraineeService {
     }
 
     @Override
-    @Loggable
     public Trainee findTraineeById(long id) throws NotFoundException {
          Trainee trainee = traineeDao.get(id);
          if(trainee == null) {
@@ -50,7 +48,6 @@ public class TraineeServiceImpl implements TraineeService {
     }
 
     @Override
-    @Loggable
     public void updateTrainee(Trainee trainee) throws NotFoundException {
         if(traineeDao.get(trainee.getId()) == null) {
             throw new NotFoundException("Trainee record not exist by id: " + trainee.getId());
@@ -60,7 +57,6 @@ public class TraineeServiceImpl implements TraineeService {
     }
 
     @Override
-    @Loggable
     public void deleteTraineeById(long id) {
         traineeDao.delete(id);
     }

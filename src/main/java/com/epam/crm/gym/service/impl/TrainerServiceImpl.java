@@ -1,6 +1,5 @@
 package com.epam.crm.gym.service.impl;
 
-import com.epam.crm.gym.aspect.Loggable;
 import com.epam.crm.gym.dao.TrainerDao;
 import com.epam.crm.gym.dao.UserEDao;
 import com.epam.crm.gym.exception.NotFoundException;
@@ -23,7 +22,6 @@ public class TrainerServiceImpl implements TrainerService {
     }
 
     @Override
-    @Loggable
     public Trainer createTrainer(Trainer trainer) {
         UserE user = userEDao.get(trainer.getUserId());
         if(user == null) {
@@ -40,7 +38,6 @@ public class TrainerServiceImpl implements TrainerService {
     }
 
     @Override
-    @Loggable
     public Trainer findTrainerById(long id) throws NotFoundException {
         Trainer trainer = trainerDao.get(id);
         if(trainer == null) {
@@ -50,7 +47,6 @@ public class TrainerServiceImpl implements TrainerService {
     }
 
     @Override
-    @Loggable
     public void updateTrainer(Trainer trainer) throws NotFoundException {
         if(trainerDao.get(trainer.getId()) == null) {
             throw new NotFoundException("Trainer record not exist by id: " + trainer.getId());
@@ -60,7 +56,6 @@ public class TrainerServiceImpl implements TrainerService {
     }
 
     @Override
-    @Loggable
     public void deleteTrainerById(long id) {
         trainerDao.delete(id);
     }

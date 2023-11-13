@@ -1,6 +1,5 @@
 package com.epam.crm.gym.dao.impl;
 
-import com.epam.crm.gym.aspect.Loggable;
 import com.epam.crm.gym.dao.UserEDao;
 import com.epam.crm.gym.model.UserE;
 import com.epam.crm.gym.storage.InMemoryStorage;

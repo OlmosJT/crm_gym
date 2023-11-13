@@ -96,7 +96,7 @@ class TrainerServiceImplTest {
             trainerService.findTrainerById(12);
             Assertions.fail("Expected NotFoundException");
         } catch (NotFoundException exception) {
-            Assertions.assertEquals("Trainee not found by id: 12", exception.getMessage());
+            Assertions.assertEquals("Trainer not found by id: 12", exception.getMessage());
         }
 
         Mockito.verify(trainerDao, times(1)).get(any());

@@ -1,30 +1,13 @@
 package com.epam.crm.gym.config;
 
-import com.epam.crm.gym.Facade;
-import com.epam.crm.gym.dao.TraineeDao;
-import com.epam.crm.gym.dao.TrainerDao;
-import com.epam.crm.gym.dao.TrainingDao;
-import com.epam.crm.gym.dao.UserEDao;
-import com.epam.crm.gym.dao.impl.TraineeDaoImpl;
-import com.epam.crm.gym.dao.impl.TrainerDaoImpl;
-import com.epam.crm.gym.dao.impl.TrainingDaoImpl;
-import com.epam.crm.gym.dao.impl.UserEDaoImpl;
-import com.epam.crm.gym.service.TraineeService;
-import com.epam.crm.gym.service.TrainerService;
-import com.epam.crm.gym.service.TrainingService;
-import com.epam.crm.gym.service.impl.TraineeServiceImpl;
-import com.epam.crm.gym.service.impl.TrainerServiceImpl;
-import com.epam.crm.gym.service.impl.TrainingServiceImpl;
-import com.epam.crm.gym.storage.InMemoryStorage;
+
 import org.springframework.context.annotation.*;
 
 @Configuration
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = "com.epam.crm.gym")
-@EnableAspectJAutoProxy
 public class ApplicationConfig {
-/*
-    // storage bean
+/*    // storage bean
     @Bean
     public InMemoryStorage inMemoryStorage() {
         return new InMemoryStorage();
@@ -70,6 +53,5 @@ public class ApplicationConfig {
     @Bean
     public Facade facade(TraineeService traineeService, TrainerService trainerService, TrainingService trainingService) {
         return new Facade(traineeService, trainerService, trainingService);
-    }
-*/
+    }*/
 }
