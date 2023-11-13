@@ -1,8 +1,6 @@
 package com.epam.crm.gym.service.impl;
 
 import com.epam.crm.gym.dao.TrainingDao;
-import com.epam.crm.gym.dao.UserEDao;
-import com.epam.crm.gym.dao.impl.TraineeDaoImpl;
 import com.epam.crm.gym.dao.impl.TrainingDaoImpl;
 import com.epam.crm.gym.model.Training;
 import com.epam.crm.gym.service.TrainingService;
@@ -11,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;
 
 class TrainingServiceImplTest {

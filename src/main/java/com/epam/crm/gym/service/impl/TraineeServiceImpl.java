@@ -7,10 +7,12 @@ import com.epam.crm.gym.exception.NotFoundException;
 import com.epam.crm.gym.model.Trainee;
 import com.epam.crm.gym.model.UserE;
 import com.epam.crm.gym.service.TraineeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import static com.epam.crm.gym.util.ProfileGenerator.generatePassword;
 
 @Service
+@Slf4j
 public class TraineeServiceImpl implements TraineeService {
 
     private final TraineeDao traineeDao;
@@ -23,7 +25,9 @@ public class TraineeServiceImpl implements TraineeService {
 
     @Override
     public Trainee createTrainee(Trainee trainee) throws IllegalArgumentException {
+        log.info(":\tmethod: createTrainee(%s)".formatted(trainee));
         UserE user = userEDao.get(trainee.getUserId());
+        log.info(":\tchecking if user is exist: " + user);
         if(user == null) {
             throw new IllegalArgumentException("Absent user id.");
         }
@@ -33,8 +37,10 @@ public class TraineeServiceImpl implements TraineeService {
         user.setUsername(generatedUsername);
         user.setPassword(generatedPassword);
         user.setActive(true);
+        log.info(":\tsaving user with new username and password: " + user);
         userEDao.save(user);
 
+        log.info(":\tcreating trainee with updated data: " + trainee);
         return traineeDao.save(trainee);
     }
 

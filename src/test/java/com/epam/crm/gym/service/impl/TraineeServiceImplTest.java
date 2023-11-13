@@ -3,27 +3,19 @@ package com.epam.crm.gym.service.impl;
 import com.epam.crm.gym.dao.TraineeDao;
 import com.epam.crm.gym.dao.UserEDao;
 import com.epam.crm.gym.dao.impl.TraineeDaoImpl;
-import com.epam.crm.gym.dao.impl.UserEDaoImpl;
 import com.epam.crm.gym.exception.NotFoundException;
 import com.epam.crm.gym.model.Trainee;
 import com.epam.crm.gym.model.UserE;
 import com.epam.crm.gym.service.TraineeService;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.springframework.util.Assert;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
