@@ -4,6 +4,7 @@ import com.epam.crm.gym.config.ApplicationConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Application {
@@ -14,7 +15,7 @@ public class Application {
                 "Olmos",
                 "Davronov",
                 "Tasanno Street, 15",
-                LocalDateTime.of(2002, 2, 17, 12, 0)
+                LocalDate.of(2002,2,17)
         );
     }
 }

@@ -9,6 +9,7 @@ import com.epam.crm.gym.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Component
@@ -28,7 +29,7 @@ public class Facade {
         this.userService = userService;
     }
 
-    public Trainee createTrainee(String firstname, String lastname, String address, LocalDateTime dob) {
+    public Trainee createTrainee(String firstname, String lastname, String address, LocalDate dob) {
         log.info(": \tmethod: createTrainee(%s, %s, %s, %s)".formatted(firstname, lastname, address, dob.toString()));
         UserE newUser = new UserE(0, firstname, lastname, "", "", false);
         newUser = userService.createUser(newUser);

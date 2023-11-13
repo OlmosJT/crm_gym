@@ -1,4 +1,4 @@
-id,firstName,lastName,username,password,isActive
+id,firstname,lastname,username,password,isActive
 1,John,Doe,john.doe,password1,true
 2,Jane,Smith,jane.smith,password2,true
 3,Peter,Jones,peter.jones,password3,true

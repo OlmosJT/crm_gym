@@ -2,8 +2,7 @@ package com.epam.crm.gym.model;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
+import java.time.LocalDate;
 
 
 @NoArgsConstructor
@@ -12,7 +11,7 @@ import java.util.Objects;
 @Getter @Setter @EqualsAndHashCode
 public class Trainee {
     private long id;
-    private LocalDateTime dob;
+    private LocalDate dob;
     private String address;
     private long userId;
 }
