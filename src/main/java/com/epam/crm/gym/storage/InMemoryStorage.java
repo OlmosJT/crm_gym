@@ -41,16 +41,16 @@ public class InMemoryStorage implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        try {
+        /*try {
             List<UserE> userRecords = parseListFromCSV(filePathUsers, UserE.class);
             userRecords.forEach(userE -> userEMap.put(userE.getId(), userE));
 
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
-    private static <T> List<T> parseListFromCSV(String csvFilePath, Class<T> clazz) throws IOException {
+    /*private static <T> List<T> parseListFromCSV(String csvFilePath, Class<T> clazz) throws IOException {
         List<T> objects = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFilePath))) {
@@ -85,7 +85,6 @@ public class InMemoryStorage implements InitializingBean {
         }
 
         return object;
-
     }
 
     private static Object convertValue(String fieldValue, Class<?> fieldType) {
@@ -100,5 +99,5 @@ public class InMemoryStorage implements InitializingBean {
         } else {
             throw new IllegalArgumentException("Unsupported field type: " + fieldType);
         }
-    }
+    }*/
 }
